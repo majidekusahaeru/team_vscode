@@ -6,6 +6,16 @@ app = Flask(__name__)
 def top():
     return render_template("index.html")
 
+@app.route("/kyuryou")
+def kyuryou():
+    return render_template("kyuryou.html")
+@app.route("/kyuryou_re")
+def kyuryou_re():
+    ji = request.args.get("ji")
+    ro = request.args.get("ro")
+    re = ji * ro
+    return render_template("kyuryou_re.html",re= re)
+
 @app.route("/enkeisan")
 def enkeisan():
     return render_template("keisan1.html")
