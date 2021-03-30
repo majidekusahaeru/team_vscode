@@ -9,7 +9,6 @@ def top():
 def keisan():
     hankei= int(request.args.get("hankei"))
     p = 314
-    
     syu = hankei * 2 * p /100
     men = hankei * hankei * p /100
     return render_template("menu.html",syu = syu,men = men)
