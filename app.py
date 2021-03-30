@@ -9,12 +9,13 @@ def top():
 @app.route("/kyuryou")
 def kyuryou():
     return render_template("kyuryou.html")
+
 @app.route("/kyuryou_re")
 def kyuryou_re():
-    ji = request.args.get("ji")
-    ro = request.args.get("ro")
+    ji =int(request.args.get("ji"))
+    ro =int(request.args.get("ro"))
     re = ji * ro
-    return render_template("kyuryou_re.html",re= re)
+    return render_template("kyuryou_re.html",re=re)
 
 @app.route("/enkeisan")
 def enkeisan():
